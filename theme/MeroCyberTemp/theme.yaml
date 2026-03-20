@@ -1,0 +1,281 @@
+---
+author: "@codex"
+
+display:
+  DISPLAY_SIZE: 3.5"
+  DISPLAY_ORIENTATION: portrait
+  DISPLAY_RGB_LED: 0, 229, 255
+
+static_images:
+  BACKGROUND:
+    PATH: background.png
+    X: 0
+    Y: 0
+    WIDTH: 320
+    HEIGHT: 480
+
+static_text:
+  HEADER_TITLE:
+    TEXT: ">> MERO_MONITOR_"
+    X: 20
+    Y: 18
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 23
+    FONT_COLOR: 0, 229, 255
+    BACKGROUND_IMAGE: background.png
+  HEADER_SUBTITLE:
+    TEXT: "cpu // gpu // thermal feed"
+    X: 22
+    Y: 44
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 11
+    FONT_COLOR: 255, 73, 216
+    BACKGROUND_IMAGE: background.png
+  CPU_LABEL:
+    TEXT: "CPU TEMP"
+    X: 24
+    Y: 88
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 16
+    FONT_COLOR: 0, 229, 255
+    BACKGROUND_IMAGE: background.png
+  CPU_LOAD_LABEL:
+    TEXT: "LOAD"
+    X: 226
+    Y: 92
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 14
+    FONT_COLOR: 217, 255, 63
+    BACKGROUND_IMAGE: background.png
+  GPU_LABEL:
+    TEXT: "GPU TEMP"
+    X: 24
+    Y: 230
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 16
+    FONT_COLOR: 255, 73, 216
+    BACKGROUND_IMAGE: background.png
+  GPU_FAN_LABEL:
+    TEXT: "FAN"
+    X: 238
+    Y: 234
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 14
+    FONT_COLOR: 217, 255, 63
+    BACKGROUND_IMAGE: background.png
+  RAM_LABEL:
+    TEXT: "MEM"
+    X: 30
+    Y: 376
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 15
+    FONT_COLOR: 0, 229, 255
+    BACKGROUND_IMAGE: background.png
+  ROOT_LABEL:
+    TEXT: "DISK"
+    X: 186
+    Y: 376
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 15
+    FONT_COLOR: 0, 229, 255
+    BACKGROUND_IMAGE: background.png
+
+STATS:
+  CPU:
+    TEMPERATURE:
+      INTERVAL: 2
+      TEXT:
+        SHOW: True
+        SHOW_UNIT: True
+        X: 30
+        Y: 110
+        MIN_SIZE: 0
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 68
+        FONT_COLOR: 217, 255, 63
+        FONT_COLOR_STOPS:
+          - value: 0
+            color: [0, 229, 255]
+          - value: 50
+            color: [217, 255, 63]
+          - value: 75
+            color: [255, 196, 61]
+          - value: 95
+            color: [255, 73, 73]
+        BACKGROUND_IMAGE: background.png
+      GRAPH:
+        SHOW: True
+        X: 24
+        Y: 180
+        WIDTH: 272
+        HEIGHT: 8
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+        BAR_COLOR: 0, 229, 255
+        BAR_COLOR_STOPS:
+          - value: 0
+            color: [0, 229, 255]
+          - value: 50
+            color: [217, 255, 63]
+          - value: 75
+            color: [255, 196, 61]
+          - value: 95
+            color: [255, 73, 73]
+        BAR_OUTLINE: False
+        BACKGROUND_IMAGE: background.png
+    PERCENTAGE:
+      INTERVAL: 2
+      TEXT:
+        SHOW: True
+        SHOW_UNIT: True
+        X: 206
+        Y: 120
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 28
+        FONT_COLOR: 217, 255, 63
+        BACKGROUND_IMAGE: background.png
+
+  MEMORY:
+    INTERVAL: 10
+    VIRTUAL:
+      PERCENT_TEXT:
+        SHOW: True
+        SHOW_UNIT: True
+        X: 28
+        Y: 404
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 42
+        FONT_COLOR: 217, 255, 63
+        FONT_COLOR_STOPS:
+          - value: 0
+            color: [255, 224, 92]
+          - value: 80
+            color: [255, 224, 92]
+          - value: 90
+            color: [255, 150, 52]
+          - value: 100
+            color: [255, 73, 73]
+        BACKGROUND_IMAGE: background.png
+
+  DISK:
+    INTERVAL: 15
+    USED:
+      PERCENT_TEXT:
+        SHOW: True
+        SHOW_UNIT: True
+        X: 184
+        Y: 404
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 42
+        FONT_COLOR: 186, 242, 255
+        FONT_COLOR_STOPS:
+          - value: 0
+            color: [186, 242, 255]
+          - value: 60
+            color: [186, 242, 255]
+          - value: 80
+            color: [255, 224, 92]
+          - value: 90
+            color: [255, 150, 52]
+          - value: 100
+            color: [255, 73, 73]
+        BACKGROUND_IMAGE: background.png
+
+  CUSTOM:
+    INTERVAL: 2
+
+    MeroGpuTemp:
+      TEXT:
+        SHOW: True
+        X: 30
+        Y: 252
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 68
+        FONT_COLOR: 0, 229, 255
+        FONT_COLOR_STOPS:
+          - value: 0
+            color: [0, 229, 255]
+          - value: 50
+            color: [217, 255, 63]
+          - value: 75
+            color: [255, 196, 61]
+          - value: 95
+            color: [255, 73, 73]
+        BACKGROUND_IMAGE: background.png
+      GRAPH:
+        SHOW: True
+        X: 24
+        Y: 322
+        WIDTH: 272
+        HEIGHT: 8
+        MIN_VALUE: 0
+        MAX_VALUE: 100
+        BAR_COLOR: 255, 73, 216
+        BAR_COLOR_STOPS:
+          - value: 0
+            color: [0, 229, 255]
+          - value: 50
+            color: [217, 255, 63]
+          - value: 75
+            color: [255, 196, 61]
+          - value: 95
+            color: [255, 73, 73]
+        BAR_OUTLINE: False
+        BACKGROUND_IMAGE: background.png
+
+    MeroGpuFan:
+      TEXT:
+        SHOW: True
+        X: 202
+        Y: 264
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 18
+        FONT_COLOR: 217, 255, 63
+        BACKGROUND_IMAGE: background.png
+
+    MeroNetRate:
+      TEXT:
+        SHOW: True
+        X: 16
+        Y: 460
+        WIDTH: 156
+        ALIGN: left
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 11
+        FONT_COLOR: 0, 229, 255
+        BACKGROUND_IMAGE: background.png
+
+    MeroPing:
+      TEXT:
+        SHOW: True
+        X: 176
+        Y: 460
+        WIDTH: 128
+        ALIGN: right
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 11
+        FONT_COLOR: 255, 73, 216
+        BACKGROUND_IMAGE: background.png
+
+    MeroClock:
+      TEXT:
+        SHOW: True
+        X: 260
+        Y: 43
+        WIDTH: 96
+        ALIGN: right
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 13
+        FONT_COLOR: 0, 229, 255
+        FONT_COLOR_STOPS:
+          - value: 0
+            color: [255, 73, 216]
+          - value: 6
+            color: [0, 229, 255]
+          - value: 18
+            color: [0, 229, 255]
+          - value: 20
+            color: [255, 73, 216]
+          - value: 24
+            color: [255, 73, 216]
+        BACKGROUND_IMAGE: background.png

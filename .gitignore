@@ -1,0 +1,15 @@
+# Upstream app clone and virtualenv
+/vendor/
+/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local tooling and machine state
+/.serena/
+*.log
+/log.log
+
+# Legacy local files not part of the current shareable setup
+/monitor.py

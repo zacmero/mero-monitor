@@ -1,0 +1,77 @@
+---
+display:
+  DISPLAY_SIZE: 3.5"
+  DISPLAY_ORIENTATION: portrait
+  DISPLAY_RGB_LED: 255, 255, 255
+
+static_images: {}
+static_text: {}
+
+STATS:
+  CPU:
+    PERCENTAGE: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    FREQUENCY: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    LOAD:
+      ONE: {TEXT: {SHOW: false}}
+      FIVE: {TEXT: {SHOW: false}}
+      FIFTEEN: {TEXT: {SHOW: false}}
+    TEMPERATURE: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    FAN_SPEED: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+  GPU:
+    MEMORY: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}}
+    PERCENTAGE: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    MEMORY_PERCENT: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    MEMORY_USED: {TEXT: {SHOW: false}}
+    MEMORY_TOTAL: {TEXT: {SHOW: false}}
+    TEMPERATURE: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    FPS: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    FAN_SPEED: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    FREQUENCY: {TEXT: {SHOW: false}, GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+  MEMORY:
+    SWAP: {GRAPH: {SHOW: false}, RADIAL: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+    VIRTUAL:
+      GRAPH: {SHOW: false}
+      RADIAL: {SHOW: false}
+      PERCENT_TEXT: {SHOW: false}
+      LINE_GRAPH: {SHOW: false}
+      USED: {SHOW: false}
+      FREE: {SHOW: false}
+      TOTAL: {SHOW: false}
+  DISK:
+    USED:
+      GRAPH: {SHOW: false}
+      RADIAL: {SHOW: false}
+      PERCENT_TEXT: {SHOW: false}
+      LINE_GRAPH: {SHOW: false}
+      TEXT: {SHOW: false}
+    TOTAL: {TEXT: {SHOW: false}}
+    FREE: {TEXT: {SHOW: false}}
+  NET:
+    WLO:
+      UPLOAD: {TEXT: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+      DOWNLOAD: {TEXT: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+      UPLOADED: {TEXT: {SHOW: false}}
+      DOWNLOADED: {TEXT: {SHOW: false}}
+    ETH:
+      UPLOAD: {TEXT: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+      DOWNLOAD: {TEXT: {SHOW: false}, LINE_GRAPH: {SHOW: false}}
+      UPLOADED: {TEXT: {SHOW: false}}
+      DOWNLOADED: {TEXT: {SHOW: false}}
+  DATE:
+    DAY: {TEXT: {SHOW: false}}
+    HOUR: {TEXT: {SHOW: false}}
+  UPTIME:
+    SECONDS: {TEXT: {SHOW: false}}
+    FORMATTED: {TEXT: {SHOW: false}}
+  CUSTOM: {}
+  WEATHER:
+    TEMPERATURE: {TEXT: {SHOW: false}}
+    TEMPERATURE_FELT: {TEXT: {SHOW: false}}
+    UPDATE_TIME: {TEXT: {SHOW: false}}
+    WEATHER_DESCRIPTION: {TEXT: {SHOW: false}}
+    HUMIDITY: {TEXT: {SHOW: false}}
+  PING:
+    GRAPH: {SHOW: false}
+    RADIAL: {SHOW: false}
+    TEXT: {SHOW: false}
+    LINE_GRAPH: {SHOW: false}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Turzx monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=zacmero
+WorkingDirectory=/home/zacmero/mero-monitor
+ExecStart=/home/zacmero/mero-monitor/run-monitor.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
