@@ -36,6 +36,8 @@ from ping3 import ping
 import library.config as config
 
 _SENSORS_CACHE = {"time": 0.0, "data": {}}
+_NVIDIA_SMI_CACHE = {"time": 0.0, "data": {"temp": None, "fan_percent": None, "load": None}}
+_NVIDIA_FAN_CACHE = {"time": 0.0, "value": None}
 
 
 def _read_sensors_json():
@@ -85,6 +87,85 @@ def _nouveau_gpu_metrics():
         }
 
     return {"temp": None, "fan": None}
+
+
+def _read_nvidia_smi_metrics():
+    now = time.monotonic()
+    if now - _NVIDIA_SMI_CACHE["time"] < 1:
+        return _NVIDIA_SMI_CACHE["data"]
+
+    data = {"temp": None, "fan_percent": None, "load": None}
+    try:
+        output = subprocess.run(
+            [
+                "nvidia-smi",
+                "--query-gpu=temperature.gpu,fan.speed,utilization.gpu",
+                "--format=csv,noheader,nounits",
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=1,
+        )
+        if output.returncode == 0 and output.stdout.strip():
+            line = output.stdout.strip().splitlines()[0]
+            parts = [part.strip() for part in line.split(",")]
+            if len(parts) >= 3:
+                temp = float(parts[0]) if parts[0] not in {"N/A", "[Not Supported]"} else None
+                fan_percent = float(parts[1]) if parts[1] not in {"N/A", "[Not Supported]"} else None
+                load = float(parts[2]) if parts[2] not in {"N/A", "[Not Supported]"} else None
+                data = {"temp": temp, "fan_percent": fan_percent, "load": load}
+    except Exception:
+        data = {"temp": None, "fan_percent": None, "load": None}
+
+    _NVIDIA_SMI_CACHE["time"] = now
+    _NVIDIA_SMI_CACHE["data"] = data
+    return data
+
+
+def _read_nvidia_fan_rpm():
+    now = time.monotonic()
+    if now - _NVIDIA_FAN_CACHE["time"] < 1:
+        return _NVIDIA_FAN_CACHE["value"]
+
+    value = None
+    try:
+        output = subprocess.run(
+            ["nvidia-settings", "-q", "GPUCurrentFanSpeedRPM", "-t"],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=1,
+        )
+        if output.returncode == 0 and output.stdout.strip():
+            raw = output.stdout.strip().splitlines()[0].strip()
+            if raw not in {"N/A", "[Not Supported]"}:
+                value = float(raw)
+    except Exception:
+        value = None
+
+    _NVIDIA_FAN_CACHE["time"] = now
+    _NVIDIA_FAN_CACHE["value"] = value
+    return value
+
+
+def _gpu_metrics():
+    nvidia = _read_nvidia_smi_metrics()
+    if any(nvidia[key] is not None for key in ("temp", "fan_percent", "load")):
+        return {
+            "temp": nvidia["temp"],
+            "fan_rpm": _read_nvidia_fan_rpm(),
+            "fan_percent": nvidia["fan_percent"],
+            "load": nvidia["load"],
+        }
+
+    nouveau = _nouveau_gpu_metrics()
+    return {
+        "temp": nouveau["temp"],
+        "fan_rpm": nouveau["fan"],
+        "fan_percent": None,
+        "load": None,
+    }
 
 
 # Custom data classes must be implemented in this file, inherit the CustomDataSource and implement its 2 methods
@@ -164,7 +245,7 @@ class MeroGpuTemp(CustomDataSource):
     last_val = [math.nan] * 30
 
     def as_numeric(self) -> float:
-        value = _nouveau_gpu_metrics()["temp"]
+        value = _gpu_metrics()["temp"]
         self.value = value if value is not None else math.nan
 
         self.last_val.append(self.value)
@@ -187,7 +268,37 @@ class MeroGpuFan(CustomDataSource):
     last_val = [math.nan] * 30
 
     def as_numeric(self) -> float:
-        value = _nouveau_gpu_metrics()["fan"]
+        metrics = _gpu_metrics()
+        rpm_value = metrics["fan_rpm"]
+        percent_value = metrics["fan_percent"]
+        self.value = rpm_value if rpm_value is not None else math.nan
+        self.percent_value = percent_value if percent_value is not None else math.nan
+
+        self.last_val.append(self.value)
+        self.last_val.pop(0)
+
+        return self.value
+
+    def as_string(self) -> str:
+        if not hasattr(self, "value"):
+            self.as_numeric()
+        if not math.isnan(self.value):
+            return f"{self.value:>4.0f} RPM"
+        if hasattr(self, "percent_value") and not math.isnan(self.percent_value):
+            return f"{self.percent_value:>4.0f}%"
+        if math.isnan(self.value):
+            return "---- RPM"
+        return f"{self.value:>4.0f} RPM"
+
+    def last_values(self) -> List[float]:
+        return self.last_val
+
+
+class MeroGpuLoad(CustomDataSource):
+    last_val = [math.nan] * 30
+
+    def as_numeric(self) -> float:
+        value = _gpu_metrics()["load"]
         self.value = value if value is not None else math.nan
 
         self.last_val.append(self.value)
@@ -199,8 +310,8 @@ class MeroGpuFan(CustomDataSource):
         if not hasattr(self, "value"):
             self.as_numeric()
         if math.isnan(self.value):
-            return "---- RPM"
-        return f"{self.value:>4.0f} RPM"
+            return "--%"
+        return f"{int(round(self.value)):>3d}%"
 
     def last_values(self) -> List[float]:
         return self.last_val
@@ -292,7 +403,7 @@ class MeroClock(CustomDataSource):
     def as_numeric(self) -> float:
         now = time.localtime()
         self.value = now.tm_hour + now.tm_min / 60.0
-        self.display = time.strftime("%I:%M%p", now).lstrip("0")
+        self.display = time.strftime("%H:%M", now)
         return self.value
 
     def as_string(self) -> str:

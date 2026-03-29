@@ -1,6 +1,6 @@
 # Turzx Monitor
 
-Custom Linux setup for a Turzx `USB35INCHIPSV2` 3.5" display, built around `mathoudebine/turing-smart-screen-python` with a temperature-first cyberpunk theme and local overrides for `nouveau` systems.
+Custom Linux setup for a Turzx `USB35INCHIPSV2` 3.5" display, built around `mathoudebine/turing-smart-screen-python` with a temperature-first cyberpunk theme and local overrides for this ArchMerOS machine.
 
 ## What This Repo Contains
 
@@ -11,7 +11,7 @@ It keeps the files that matter for this machine in the project root:
 - `theme/MeroCyberTemp/`: the custom theme asset and YAML
 - `config.yaml`: the runtime config used by the display app
 - `overrides/library/stats.py`: patched upstream renderer with dynamic theme color stops
-- `overrides/library/sensors/sensors_custom.py`: custom sensors for `nouveau` GPU temp/fan, network rate, and ping
+- `overrides/library/sensors/sensors_custom.py`: custom sensors for NVIDIA or `nouveau` GPU temp/fan/load, network rate, and ping
 - `run-monitor.sh`: syncs the root files into the upstream app and launches it
 - `sync-project-files.sh`: copies the root theme/config/overrides into the vendored upstream tree
 - `setup-vendor.sh`: clones the upstream app and installs its Python environment
@@ -33,7 +33,8 @@ The upstream runtime bundle lives under `vendor/` at runtime and is ignored by G
   - very hot = red
 - memory and disk usage with separate color ramps
 - bottom status strip for network throughput and ping
-- GPU temperature and fan data from `nouveau` via `sensors -j`
+- GPU temperature and load data from NVIDIA via `nvidia-smi`, with fallback to `nouveau` `sensors -j`
+- GPU fan readout from `nvidia-settings` RPM when available, otherwise fallback behavior
 
 Theme files:
 
@@ -45,7 +46,7 @@ Theme files:
 - root-first workflow: the custom files in this repo are the source of truth
 - safe upstream reuse instead of maintaining a full fork
 - systemd boot integration
-- custom sensor bridge for Linux `nouveau` setups where upstream GPU support is limited
+- custom sensor bridge for Linux NVIDIA and `nouveau` setups where upstream GPU support is limited
 - dynamic color-stop support added to upstream text and bar rendering
 - manual setup and runtime scripts kept in the repo instead of scattered around the machine
 
@@ -115,4 +116,4 @@ sudo systemctl status turzx-monitor.service --no-pager
 ## Notes
 
 - `vendor/` is intentionally ignored so the repo stays focused on the custom layer.
-- On this `nouveau` setup, real NVIDIA GPU utilization is still not available, so the custom layer focuses on temperature, fan, and other useful status instead.
+- On the current NVIDIA setup, the custom layer reads GPU temperature and utilization through `nvidia-smi` and keeps a small GPU load field under the fan readout.

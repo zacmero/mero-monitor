@@ -41,10 +41,10 @@ static_text:
     BACKGROUND_IMAGE: background.png
   CPU_LOAD_LABEL:
     TEXT: "LOAD"
-    X: 226
+    X: 238
     Y: 92
     FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
-    FONT_SIZE: 14
+    FONT_SIZE: 16
     FONT_COLOR: 217, 255, 63
     BACKGROUND_IMAGE: background.png
   GPU_LABEL:
@@ -57,11 +57,23 @@ static_text:
     BACKGROUND_IMAGE: background.png
   GPU_FAN_LABEL:
     TEXT: "FAN"
-    X: 238
+    X: 219
     Y: 234
+    WIDTH: 52
+    ALIGN: center
     FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
     FONT_SIZE: 14
     FONT_COLOR: 217, 255, 63
+    BACKGROUND_IMAGE: background.png
+  GPU_LOAD_LABEL:
+    TEXT: "LOAD"
+    X: 262
+    Y: 234
+    WIDTH: 60
+    ALIGN: center
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 12
+    FONT_COLOR: 0, 229, 255
     BACKGROUND_IMAGE: background.png
   RAM_LABEL:
     TEXT: "MEM"
@@ -89,6 +101,9 @@ STATS:
         SHOW_UNIT: True
         X: 30
         Y: 110
+        WIDTH: 168
+        HEIGHT: 78
+        ALIGN: left
         MIN_SIZE: 0
         FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
         FONT_SIZE: 68
@@ -189,6 +204,9 @@ STATS:
         SHOW: True
         X: 30
         Y: 252
+        WIDTH: 168
+        HEIGHT: 78
+        ALIGN: left
         FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
         FONT_SIZE: 68
         FONT_COLOR: 0, 229, 255
@@ -226,11 +244,34 @@ STATS:
     MeroGpuFan:
       TEXT:
         SHOW: True
-        X: 202
-        Y: 264
+        X: 193
+        Y: 252
+        WIDTH: 72
+        ALIGN: center
         FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
         FONT_SIZE: 18
         FONT_COLOR: 217, 255, 63
+        BACKGROUND_IMAGE: background.png
+
+    MeroGpuLoad:
+      TEXT:
+        SHOW: True
+        X: 248
+        Y: 252
+        WIDTH: 72
+        ALIGN: center
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 18
+        FONT_COLOR: 0, 229, 255
+        FONT_COLOR_STOPS:
+          - value: 0
+            color: [0, 229, 255]
+          - value: 40
+            color: [217, 255, 63]
+          - value: 75
+            color: [255, 196, 61]
+          - value: 95
+            color: [255, 73, 73]
         BACKGROUND_IMAGE: background.png
 
     MeroNetRate:
@@ -260,7 +301,7 @@ STATS:
     MeroClock:
       TEXT:
         SHOW: True
-        X: 260
+        X: 254
         Y: 43
         WIDTH: 96
         ALIGN: right
