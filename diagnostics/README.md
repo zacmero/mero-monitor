@@ -53,6 +53,28 @@ configured to load at boot. This was fixed by installing
 `/etc/modules-load.d/mero-monitor.conf` with `it87` and loading the module.
 The repository service installer now installs this file and loads the driver.
 
+### BIOS Silent profile check
+
+After selecting Silent in BIOS, `pwm1_auto_slope` changed from 28 to 16;
+`pwm1_enable` remained 2. The BIOS profile therefore changed controller
+configuration. A further test compared Silent automatic mode with forced
+outputs, then restored Silent:
+
+| Phase | Median fan1 RPM |
+| --- | ---: |
+| Silent before | 2,149 |
+| Manual 100% | 2,295 |
+| Manual 60% | 2,299 |
+| Manual 100% again | 2,303 |
+| Silent after | 2,303 |
+
+There was no repeatable CPU fan reduction attributable to Silent: after
+restoration it matched the full-output reading, and manual 60% matched 100%.
+This does not prove that the board lacks DC hardware; it shows that the
+Silent profile did not demonstrate useful speed control in this setup.
+The test restored `pwm1=70`, `pwm1_enable=2`, retaining Silent's slope of 16.
+See [Silent test readings](fan-silent-test-2026-11-01.json).
+
 ## DC support remains unresolved
 
 [Gigabyte's specifications](https://www.gigabyte.com/br/Motherboard/GA-B85M-D3PH-rev-11/sp)
