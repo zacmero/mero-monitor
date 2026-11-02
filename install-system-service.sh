@@ -13,6 +13,9 @@ chmod +x   "$ROOT_DIR/setup-vendor.sh"   "$ROOT_DIR/sync-project-files.sh"   "$R
 
 install -Dm644   "$ROOT_DIR/systemd/turzx-monitor.service"   "/etc/systemd/system/$SERVICE_NAME"
 
+install -Dm644 "$ROOT_DIR/systemd/mero-monitor.conf" "/etc/modules-load.d/mero-monitor.conf"
+modprobe it87
+
 systemctl daemon-reload
 systemctl enable --now "$SERVICE_NAME"
 

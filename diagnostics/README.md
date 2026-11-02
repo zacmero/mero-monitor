@@ -46,7 +46,12 @@ Automatic mode being enabled does not prove effective control of a 3-pin fan.
 
 Raw data: [initial probe](fan-probe-2026-11-01.json) and
 [longer repeat](fan-retest-2026-11-01.json). No persistent fan curve changes
-were made. Loading `it87` during this session does not configure reboot persistence.
+were made.
+
+After the BIOS-profile reboot, RPM disappeared because `it87` had not been
+configured to load at boot. This was fixed by installing
+`/etc/modules-load.d/mero-monitor.conf` with `it87` and loading the module.
+The repository service installer now installs this file and loads the driver.
 
 ## DC support remains unresolved
 

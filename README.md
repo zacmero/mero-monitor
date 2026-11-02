@@ -93,6 +93,9 @@ Then log out and back in, or reboot.
 sudo ./install-system-service.sh
 ```
 
+The installer also loads `it87` and configures it to load on each boot for
+CPU fan RPM monitoring on this motherboard.
+
 That installs [systemd/turzx-monitor.service](/home/zacmero/mero-monitor/systemd/turzx-monitor.service) into `/etc/systemd/system/` and enables it.
 
 Useful commands:
