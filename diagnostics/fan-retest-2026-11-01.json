@@ -1,0 +1,416 @@
+[
+  {
+    "channel": 1,
+    "original": [
+      70,
+      2
+    ]
+  },
+  {
+    "channel": 1,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 2163,
+    "fan2": 828
+  },
+  {
+    "channel": 1,
+    "phase": "full",
+    "cpu_C": 52.0,
+    "fan1": 2272,
+    "fan2": 829
+  },
+  {
+    "channel": 1,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 2142,
+    "fan2": 829
+  },
+  {
+    "channel": 1,
+    "phase": "full",
+    "cpu_C": 43.0,
+    "fan1": 4591,
+    "fan2": 828
+  },
+  {
+    "channel": 1,
+    "phase": "full",
+    "cpu_C": 50.0,
+    "fan1": 2272,
+    "fan2": 829
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 43.0,
+    "fan1": 2142,
+    "fan2": 830
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 4591,
+    "fan2": 830
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2288,
+    "fan2": 830
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 46.0,
+    "fan1": 2170,
+    "fan2": 830
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2170,
+    "fan2": 829
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2265,
+    "fan2": 829
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2280,
+    "fan2": 831
+  },
+  {
+    "channel": 1,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2156,
+    "fan2": 830
+  },
+  {
+    "channel": 1,
+    "phase": "full_again",
+    "cpu_C": 43.0,
+    "fan1": 2272,
+    "fan2": 829
+  },
+  {
+    "channel": 1,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2170,
+    "fan2": 831
+  },
+  {
+    "channel": 1,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2163,
+    "fan2": 831
+  },
+  {
+    "channel": 1,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2280,
+    "fan2": 831
+  },
+  {
+    "channel": 1,
+    "phase": "full_again",
+    "cpu_C": 41.0,
+    "fan1": 2288,
+    "fan2": 831
+  },
+  {
+    "restored": 1,
+    "pwm": 70,
+    "enable": 2
+  },
+  {
+    "channel": 2,
+    "original": [
+      70,
+      2
+    ]
+  },
+  {
+    "channel": 2,
+    "phase": "full",
+    "cpu_C": 40.0,
+    "fan1": 2136,
+    "fan2": 1013
+  },
+  {
+    "channel": 2,
+    "phase": "full",
+    "cpu_C": 41.0,
+    "fan1": 2272,
+    "fan2": 1163
+  },
+  {
+    "channel": 2,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 2096,
+    "fan2": 1169
+  },
+  {
+    "channel": 2,
+    "phase": "full",
+    "cpu_C": 41.0,
+    "fan1": 2083,
+    "fan2": 1165
+  },
+  {
+    "channel": 2,
+    "phase": "full",
+    "cpu_C": 40.0,
+    "fan1": 2096,
+    "fan2": 1165
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 40.0,
+    "fan1": 2096,
+    "fan2": 1117
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2163,
+    "fan2": 1074
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 47.0,
+    "fan1": 2136,
+    "fan2": 1073
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 40.0,
+    "fan1": 2102,
+    "fan2": 1073
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 53.0,
+    "fan1": 2102,
+    "fan2": 1073
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 50.0,
+    "fan1": 2280,
+    "fan2": 1071
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2102,
+    "fan2": 1071
+  },
+  {
+    "channel": 2,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2272,
+    "fan2": 1071
+  },
+  {
+    "channel": 2,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2265,
+    "fan2": 1123
+  },
+  {
+    "channel": 2,
+    "phase": "full_again",
+    "cpu_C": 44.0,
+    "fan1": 2288,
+    "fan2": 1159
+  },
+  {
+    "channel": 2,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2096,
+    "fan2": 1161
+  },
+  {
+    "channel": 2,
+    "phase": "full_again",
+    "cpu_C": 43.0,
+    "fan1": 4470,
+    "fan2": 1161
+  },
+  {
+    "channel": 2,
+    "phase": "full_again",
+    "cpu_C": 41.0,
+    "fan1": 2115,
+    "fan2": 1159
+  },
+  {
+    "restored": 2,
+    "pwm": 70,
+    "enable": 2
+  },
+  {
+    "channel": 3,
+    "original": [
+      70,
+      2
+    ]
+  },
+  {
+    "channel": 3,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 2280,
+    "fan2": 819
+  },
+  {
+    "channel": 3,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 4591,
+    "fan2": 806
+  },
+  {
+    "channel": 3,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 2280,
+    "fan2": 825
+  },
+  {
+    "channel": 3,
+    "phase": "full",
+    "cpu_C": 48.0,
+    "fan1": 2142,
+    "fan2": 830
+  },
+  {
+    "channel": 3,
+    "phase": "full",
+    "cpu_C": 42.0,
+    "fan1": 2265,
+    "fan2": 830
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 43.0,
+    "fan1": 2280,
+    "fan2": 829
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2142,
+    "fan2": 829
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2280,
+    "fan2": 830
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 44.0,
+    "fan1": 2149,
+    "fan2": 829
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 2149,
+    "fan2": 830
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 49.0,
+    "fan1": 2142,
+    "fan2": 829
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 43.0,
+    "fan1": 2272,
+    "fan2": 829
+  },
+  {
+    "channel": 3,
+    "phase": "60pct",
+    "cpu_C": 42.0,
+    "fan1": 4470,
+    "fan2": 828
+  },
+  {
+    "channel": 3,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2156,
+    "fan2": 828
+  },
+  {
+    "channel": 3,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2142,
+    "fan2": 828
+  },
+  {
+    "channel": 3,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2242,
+    "fan2": 828
+  },
+  {
+    "channel": 3,
+    "phase": "full_again",
+    "cpu_C": 41.0,
+    "fan1": 2280,
+    "fan2": 827
+  },
+  {
+    "channel": 3,
+    "phase": "full_again",
+    "cpu_C": 42.0,
+    "fan1": 2265,
+    "fan2": 828
+  },
+  {
+    "restored": 3,
+    "pwm": 70,
+    "enable": 2
+  }
+]

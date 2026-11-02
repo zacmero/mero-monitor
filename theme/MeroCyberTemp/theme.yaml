@@ -39,13 +39,27 @@ static_text:
     FONT_SIZE: 16
     FONT_COLOR: 0, 229, 255
     BACKGROUND_IMAGE: background.png
+  CPU_FAN_LABEL:
+    TEXT: "FAN RPM"
+    X: 198
+    Y: 92
+    WIDTH: 60
+    ALIGN: center
+    ANCHOR: mt
+    FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+    FONT_SIZE: 12
+    FONT_COLOR: 217, 255, 63
+    BACKGROUND_IMAGE: background.png
   CPU_LOAD_LABEL:
     TEXT: "LOAD"
-    X: 238
+    X: 252
     Y: 92
+    WIDTH: 52
+    ALIGN: center
+    ANCHOR: mt
     FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
-    FONT_SIZE: 16
-    FONT_COLOR: 217, 255, 63
+    FONT_SIZE: 12
+    FONT_COLOR: 0, 229, 255
     BACKGROUND_IMAGE: background.png
   GPU_LABEL:
     TEXT: "GPU TEMP"
@@ -143,11 +157,14 @@ STATS:
       TEXT:
         SHOW: True
         SHOW_UNIT: True
-        X: 206
-        Y: 120
+        X: 247
+        Y: 110
+        WIDTH: 52
+        ALIGN: center
+        ANCHOR: mt
         FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
-        FONT_SIZE: 28
-        FONT_COLOR: 217, 255, 63
+        FONT_SIZE: 18
+        FONT_COLOR: 0, 229, 255
         BACKGROUND_IMAGE: background.png
 
   MEMORY:
@@ -198,6 +215,19 @@ STATS:
 
   CUSTOM:
     INTERVAL: 2
+
+    MeroCpuFan:
+      TEXT:
+        SHOW: True
+        X: 198
+        Y: 110
+        WIDTH: 60
+        ALIGN: center
+        ANCHOR: mt
+        FONT: jetbrains-mono/JetBrainsMono-Bold.ttf
+        FONT_SIZE: 18
+        FONT_COLOR: 217, 255, 63
+        BACKGROUND_IMAGE: background.png
 
     MeroGpuTemp:
       TEXT:

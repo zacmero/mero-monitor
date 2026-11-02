@@ -264,6 +264,32 @@ class MeroGpuTemp(CustomDataSource):
         return self.last_val
 
 
+class MeroCpuFan(CustomDataSource):
+    def as_numeric(self) -> float:
+        self.value = math.nan
+        selected = config.CONFIG_DATA["config"].get("CPU_FAN", "AUTO")
+        try:
+            for controller, entries in psutil.sensors_fans().items():
+                for index, entry in enumerate(entries, 1):
+                    name = f"{controller}/{entry.label or f'fan{index}'}"
+                    if (selected != "AUTO" and selected == name) or (
+                        selected == "AUTO" and any(label in name.lower() for label in ("cpu", "proc"))
+                    ):
+                        self.value = float(entry.current)
+                        return self.value
+        except (AttributeError, OSError, ValueError):
+            pass
+        return self.value
+
+    def as_string(self) -> str:
+        if not hasattr(self, "value"):
+            self.as_numeric()
+        return "--" if math.isnan(self.value) else f"{self.value:.0f}"
+
+    def last_values(self) -> List[float]:
+        return []
+
+
 class MeroGpuFan(CustomDataSource):
     last_val = [math.nan] * 30
 

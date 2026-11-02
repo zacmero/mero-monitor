@@ -1,0 +1,253 @@
+{
+  "date": "2026-11-01",
+  "board": "Gigabyte B85M-D3PH",
+  "cooler": "Revenger G-VR341 (3-pin)",
+  "rows": [
+    {
+      "channel": 1,
+      "original": [
+        70,
+        2
+      ]
+    },
+    {
+      "channel": 1,
+      "phase": "full",
+      "cpu_C": 41,
+      "fan1": 2265,
+      "fan2": 824
+    },
+    {
+      "channel": 1,
+      "phase": "full",
+      "cpu_C": 49,
+      "fan1": 2142,
+      "fan2": 824
+    },
+    {
+      "channel": 1,
+      "phase": "full",
+      "cpu_C": 42,
+      "fan1": 4655,
+      "fan2": 824
+    },
+    {
+      "channel": 1,
+      "phase": "60pct",
+      "cpu_C": 43,
+      "fan1": 2272,
+      "fan2": 825
+    },
+    {
+      "channel": 1,
+      "phase": "60pct",
+      "cpu_C": 44,
+      "fan1": 2129,
+      "fan2": 826
+    },
+    {
+      "channel": 1,
+      "phase": "60pct",
+      "cpu_C": 46,
+      "fan1": 2156,
+      "fan2": 825
+    },
+    {
+      "channel": 1,
+      "phase": "60pct",
+      "cpu_C": 41,
+      "fan1": 2177,
+      "fan2": 823
+    },
+    {
+      "channel": 1,
+      "phase": "full_again",
+      "cpu_C": 48,
+      "fan1": 2257,
+      "fan2": 821
+    },
+    {
+      "channel": 1,
+      "phase": "full_again",
+      "cpu_C": 41,
+      "fan1": 2265,
+      "fan2": 823
+    },
+    {
+      "channel": 1,
+      "phase": "full_again",
+      "cpu_C": 52,
+      "fan1": 2198,
+      "fan2": 820
+    },
+    {
+      "restored": 1,
+      "pwm": 70,
+      "enable": 2
+    },
+    {
+      "channel": 2,
+      "original": [
+        70,
+        2
+      ]
+    },
+    {
+      "channel": 2,
+      "phase": "full",
+      "cpu_C": 44,
+      "fan1": 2149,
+      "fan2": 1099
+    },
+    {
+      "channel": 2,
+      "phase": "full",
+      "cpu_C": 42,
+      "fan1": 2272,
+      "fan2": 1159
+    },
+    {
+      "channel": 2,
+      "phase": "full",
+      "cpu_C": 42,
+      "fan1": 2170,
+      "fan2": 1163
+    },
+    {
+      "channel": 2,
+      "phase": "60pct",
+      "cpu_C": 42,
+      "fan1": 2129,
+      "fan2": 1090
+    },
+    {
+      "channel": 2,
+      "phase": "60pct",
+      "cpu_C": 43,
+      "fan1": 2272,
+      "fan2": 1069
+    },
+    {
+      "channel": 2,
+      "phase": "60pct",
+      "cpu_C": 42,
+      "fan1": 2149,
+      "fan2": 1069
+    },
+    {
+      "channel": 2,
+      "phase": "60pct",
+      "cpu_C": 42,
+      "fan1": 4500,
+      "fan2": 1068
+    },
+    {
+      "channel": 2,
+      "phase": "full_again",
+      "cpu_C": 43,
+      "fan1": 2272,
+      "fan2": 1144
+    },
+    {
+      "channel": 2,
+      "phase": "full_again",
+      "cpu_C": 44,
+      "fan1": 2129,
+      "fan2": 1159
+    },
+    {
+      "channel": 2,
+      "phase": "full_again",
+      "cpu_C": 41,
+      "fan1": 2142,
+      "fan2": 1159
+    },
+    {
+      "restored": 2,
+      "pwm": 70,
+      "enable": 2
+    },
+    {
+      "channel": 3,
+      "original": [
+        70,
+        2
+      ]
+    },
+    {
+      "channel": 3,
+      "phase": "full",
+      "cpu_C": 42,
+      "fan1": 2272,
+      "fan2": 894
+    },
+    {
+      "channel": 3,
+      "phase": "full",
+      "cpu_C": 42,
+      "fan1": 2272,
+      "fan2": 830
+    },
+    {
+      "channel": 3,
+      "phase": "full",
+      "cpu_C": 43,
+      "fan1": 2257,
+      "fan2": 825
+    },
+    {
+      "channel": 3,
+      "phase": "60pct",
+      "cpu_C": 42,
+      "fan1": 2272,
+      "fan2": 825
+    },
+    {
+      "channel": 3,
+      "phase": "60pct",
+      "cpu_C": 41,
+      "fan1": 2265,
+      "fan2": 826
+    },
+    {
+      "channel": 3,
+      "phase": "60pct",
+      "cpu_C": 42,
+      "fan1": 2272,
+      "fan2": 824
+    },
+    {
+      "channel": 3,
+      "phase": "60pct",
+      "cpu_C": 42,
+      "fan1": 2265,
+      "fan2": 825
+    },
+    {
+      "channel": 3,
+      "phase": "full_again",
+      "cpu_C": 42,
+      "fan1": 4440,
+      "fan2": 824
+    },
+    {
+      "channel": 3,
+      "phase": "full_again",
+      "cpu_C": 42,
+      "fan1": 2205,
+      "fan2": 824
+    },
+    {
+      "channel": 3,
+      "phase": "full_again",
+      "cpu_C": 47,
+      "fan1": 2177,
+      "fan2": 826
+    },
+    {
+      "restored": 3,
+      "pwm": 70,
+      "enable": 2
+    }
+  ]
+}
