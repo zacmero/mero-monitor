@@ -5,7 +5,7 @@ config:
   # Use AUTO for COM port auto-discovery (may not work on every setup)
   # COM_PORT: "/dev/ttyACM0"
   # COM_PORT: "COM3"
-  COM_PORT: "/dev/ttyACM0"
+  COM_PORT: "/dev/serial/by-id/usb-Turing_UsbMonitor_USB35INCHIPSV2-if00"
 
   # Theme to use (located in res/themes)
   # Use the name of the folder as value
